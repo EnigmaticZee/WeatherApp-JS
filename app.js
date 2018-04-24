@@ -6,7 +6,7 @@ var tempUnit = "C"
 
 $(document).ready(function () {
     $(".getWeatherBtn").on("click", function () {
-        restart();
+        alert("Coming Soon")
     });
 
     function restart() {
