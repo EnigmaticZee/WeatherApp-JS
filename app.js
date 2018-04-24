@@ -9,11 +9,11 @@ $(document).ready(function () {
         alert("Coming Soon")
     });
 
-    function restart() {
-        $("#city").text("");
-        $("#country").text("");
-        $("#unit").text("");
-    }
+    // function restart() {
+    //     $("#city").text("");
+    //     $("#country").text("");
+    //     $("#unit").text("");
+    // }
 
     $("#temp").html("<div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div>");
 
