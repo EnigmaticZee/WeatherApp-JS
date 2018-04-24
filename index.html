@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather App - JS, jQuery, Ajax</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+
+
+    <div class="container-full-bg">
+
+        <header>
+            <div class="collapse bg-dark" id="navbarHeader">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-md-7 py-4">
+                            <h4 class="text-white">About</h4>
+                            <p class="text-muted">This page is created for those who are currently learning or interested 
+                                in knowing how API works and can be used to fecth weather conditions.</p>
+                        </div>
+                        <div class="col-sm-4 offset-md-1 py-4">
+                            <h4 class="text-white">Contact</h4>
+                            <ul class="list-unstyled">
+                                <li>
+                                    <a href="#" class="text-white">Follow on Twitter</a>
+                                </li>
+                                <li>
+                                    <a href="http://github.com/EnigmaticZee" class="text-white">Follow on Github</a>
+                                </li>
+                                <li>
+                                    <a href="" class="text-white">Email me</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar navbar-dark bg-dark box-shadow">
+                <div class="container d-flex justify-content-between">
+                    <a href="#" class="navbar-brand d-flex align-items-center">
+
+                        <strong>Weather App API</strong>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- navbar -->
+        <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#"></a>
+            </div>
+        </nav> -->
+        <!-- /navbar -->
+
+        <!-- Jumbotron -->
+        <div id="about" class="jumbotron jumbotron-fluid">
+            <div class="container text-center">
+                <div class="fixHeight">
+                    <div class="mt-3 weather-text-display">
+                        <span class="displayLocation" id="city"></span>
+                        <span class="displayLocation" id="country"></span>
+                    </div>
+                    <!-- weather details -->
+
+                    <p class="mb-3 lead weather-text-display">
+                        <span class="displayTemp" id="temp"></span>
+                        <span class="displayTemp" id="unit"></span>
+                    </p>
+
+                    <canvas class="mb-2" id="weather-icon" width="75" height="75">
+                        </canvas>
+                </div>
+
+                <button class="btn btn-primary getWeatherBtn">Check Weather</button>
+            </div>
+        </div>
+        <!-- Jumbotron -->
+
+        <!-- Cards Container -->
+        <div class="container">
+            <div class="row">
+                <!-- Card -->
+                <div class="col-lg-4 col-md-6 col-xl-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://www.dl.dropboxusercontent.com/s/klwi6b5ry4yqu0i/paul-gilmore-KT3WlrL_bsg.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card 1</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+
+                <!-- Card -->
+                <div class="col-lg-4 col-md-6 col-xl-4">
+                    <div class="card">
+                        <img class="card-img-top" src="https://www.dl.dropboxusercontent.com/s/klwi6b5ry4yqu0i/paul-gilmore-KT3WlrL_bsg.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card 2</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+
+                <!-- Card -->
+                <div class="col-lg-4 col-md-6 col-xl-4 mx-auto">
+                    <div class="card">
+                        <img class="card-img-top" src="https://www.dl.dropboxusercontent.com/s/klwi6b5ry4yqu0i/paul-gilmore-KT3WlrL_bsg.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Card 3</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card -->
+
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="text-muted bg-light">
+        <div class="container">
+            <p class="float-right">
+                <a href="#">Back to top</a>
+            </p>
+            <p>Clima &copy; EnigmaticZee, but please download and customize it for yourself!</p>
+            <p>New to Bootstrap?
+                <a href="../../">Visit the homepage</a> or read our
+                <a href="../../getting-started/">getting started guide</a>.</p>
+        </div>
+    </footer>
+    <script src="https://gitcdn.link/cdn/darkskyapp/skycons/master/skycons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.10/js/all.js"></script>
+    
+    <script src="app.js"></script>
+    <!-- <script src="wa.js"></script> -->
+
+</body>
+
+</html>
