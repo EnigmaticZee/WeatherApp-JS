@@ -6,14 +6,9 @@ var tempUnit = "C"
 
 $(document).ready(function () {
     $(".getWeatherBtn").on("click", function () {
-        alert("Coming Soon")
+        //alert("Fair enough! ");
+        $('#myModal').modal('show')
     });
-
-    // function restart() {
-    //     $("#city").text("");
-    //     $("#country").text("");
-    //     $("#unit").text("");
-    // }
 
     $("#temp").html("<div class='lds-ellipsis'><div></div><div></div><div></div><div></div></div>");
 
@@ -30,6 +25,7 @@ $(document).ready(function () {
         lat = "lat=" + position.coords.latitude;
         lon = "lon=" + position.coords.longitude;
         getWeather(lat, lon);
+        console.log(lat + " " + lon)
     }
 
     function showError(error) {
@@ -67,12 +63,7 @@ $(document).ready(function () {
                 showWeather(weatherCondition);
             }
         });
-
     }
-
-
-
-
 
     function toggleDivs(u) {
         var currentUnit = $("#unit").text();
@@ -82,12 +73,38 @@ $(document).ready(function () {
             fahrTempDisplay = Math.round(parseInt($("#temp").text()) * 9 / 5 + 32);
             $("#temp").text(fahrTempDisplay + String.fromCharCode(176));
         } else {
-            $("#temp").text(currentTempInCelsius + " " + String.fromCharCode(176));
+            $("#temp").text(currentTempInCelsius + String.fromCharCode(176));
         }
         u.animate({ top: 1 }, 2000, function () {
             toggleDivs(u);
         });
     }
+
+    // function showWeather(icon) {
+    //     skycons = new Skycons({ "color": "black" }),
+    //         list = [
+    //             "clear-day", "clear-night", "partly-cloudy-day",
+    //             "partly-cloudy-night", "cloudy", "rain", "sleet", "snow", "wind",
+    //             "fog"
+    //         ];
+    //     for (i = list.length; i--;) {
+    //         if (icon == "clouds") {
+    //             $(".weather").html("<div class='cloudy'></div>")
+    //         } else if (icon == "rain" || icon == "thunderstorm") {
+    //             $(".weather").html("<div class='rainy'></div>")
+    //         } else if (icon == "haze" || icon === "mist") {
+    //             skycons.set("weather-icon", list[9]);
+    //             skycons.play();
+    //         } else if (icon == "snow") {
+    //             $(".weather").html("<div class='snowy'></div>")
+    //         } else if (icon == "clear") {
+    //             $(".weather").html("<div class='sunny'></div>")
+    //         } else {
+    //             skycons.remove("weather-icon");
+    //             console.log("here");
+    //         }
+    //     }
+    // }
 
     function showWeather(icon) {
         skycons = new Skycons({ "color": "black" }),
@@ -117,8 +134,5 @@ $(document).ready(function () {
                 console.log("here");
             }
         }
-
     }
-
-
 });

@@ -1,3 +1,11 @@
+.card1pad {
+  padding-bottom: 25.36px;
+}
+
+.card2pad {
+  height: 195.75px;
+}
+
 .display-4 {
     margin-top: 150px;
   }
@@ -6,6 +14,7 @@
     height: 400px;
     padding-top: 96px;
     padding-bottom:  96px;
+    /* background-image: url("https://www.dl.dropboxusercontent.com/s/klwi6b5ry4yqu0i/paul-gilmore-KT3WlrL_bsg.jpg"); */
   }
   
   .card {
